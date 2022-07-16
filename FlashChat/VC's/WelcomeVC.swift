@@ -10,10 +10,32 @@ import UIKit
 
 class WelcomeVC: UIViewController {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DispatchQueue.main.async {
+            self.animatedTitle()
+        }
     }
+}
 
 
+//MARK: - WelcomeVC
+extension WelcomeVC {
+    
+    func animatedTitle() {
+        titleLabel.text = ""
+        let titleText = "☁️ CloudChat ☁️"
+        var delay = 0
+        
+        for letter in titleText {
+            Timer.scheduledTimer(withTimeInterval: 0.1 * Double(delay), repeats: false) { (timer) in
+                self.titleLabel.text?.append(letter)
+            }
+            delay += 1
+        }
+    }
 }
 
