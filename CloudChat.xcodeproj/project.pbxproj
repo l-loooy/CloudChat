@@ -7,19 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B38918302C41DB6273BC835 /* Pods_CloudChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E35D38391DCDDE149D8960C /* Pods_CloudChat.framework */; };
 		841B6F06288199B500A3A2F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B6F05288199B500A3A2F8 /* AppDelegate.swift */; };
 		841B6F08288199B500A3A2F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B6F07288199B500A3A2F8 /* SceneDelegate.swift */; };
 		841B6F0A288199B500A3A2F8 /* WelcomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841B6F09288199B500A3A2F8 /* WelcomeVC.swift */; };
 		841B6F0D288199B500A3A2F8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841B6F0B288199B500A3A2F8 /* Main.storyboard */; };
 		841B6F0F288199B700A3A2F8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 841B6F0E288199B700A3A2F8 /* Assets.xcassets */; };
 		841B6F12288199B700A3A2F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 841B6F10288199B700A3A2F8 /* LaunchScreen.storyboard */; };
+		8436954D2883616600087EB9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8436954C2883616600087EB9 /* GoogleService-Info.plist */; };
 		84EBA4642882CE270018BBBC /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA4632882CE270018BBBC /* RegistrationVC.swift */; };
 		84EBA4662882CE420018BBBC /* LogInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA4652882CE420018BBBC /* LogInVC.swift */; };
 		84EBA4682882CE4F0018BBBC /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EBA4672882CE4F0018BBBC /* ChatVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		841B6F02288199B500A3A2F8 /* FlashChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE310EBC537F9E902BE6BA9 /* Pods-CloudChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudChat.release.xcconfig"; path = "Target Support Files/Pods-CloudChat/Pods-CloudChat.release.xcconfig"; sourceTree = "<group>"; };
+		75B9AC766385872426FD04AB /* Pods-CloudChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CloudChat.debug.xcconfig"; path = "Target Support Files/Pods-CloudChat/Pods-CloudChat.debug.xcconfig"; sourceTree = "<group>"; };
+		841B6F02288199B500A3A2F8 /* CloudChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841B6F05288199B500A3A2F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841B6F07288199B500A3A2F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		841B6F09288199B500A3A2F8 /* WelcomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeVC.swift; sourceTree = "<group>"; };
@@ -27,9 +31,11 @@
 		841B6F0E288199B700A3A2F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		841B6F11288199B700A3A2F8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		841B6F13288199B700A3A2F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8436954C2883616600087EB9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84EBA4632882CE270018BBBC /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
 		84EBA4652882CE420018BBBC /* LogInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInVC.swift; sourceTree = "<group>"; };
 		84EBA4672882CE4F0018BBBC /* ChatVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		9E35D38391DCDDE149D8960C /* Pods_CloudChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CloudChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B38918302C41DB6273BC835 /* Pods_CloudChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,20 +53,22 @@
 		841B6EF9288199B500A3A2F8 = {
 			isa = PBXGroup;
 			children = (
-				841B6F04288199B500A3A2F8 /* FlashChat */,
+				841B6F04288199B500A3A2F8 /* CloudChat */,
 				841B6F03288199B500A3A2F8 /* Products */,
+				89C22E6A214971E586CE1EF8 /* Pods */,
+				EADC8236D98869F9FC137CC4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		841B6F03288199B500A3A2F8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				841B6F02288199B500A3A2F8 /* FlashChat.app */,
+				841B6F02288199B500A3A2F8 /* CloudChat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		841B6F04288199B500A3A2F8 /* FlashChat */ = {
+		841B6F04288199B500A3A2F8 /* CloudChat */ = {
 			isa = PBXGroup;
 			children = (
 				841B6F05288199B500A3A2F8 /* AppDelegate.swift */,
@@ -70,8 +79,9 @@
 				841B6F0E288199B700A3A2F8 /* Assets.xcassets */,
 				841B6F10288199B700A3A2F8 /* LaunchScreen.storyboard */,
 				841B6F13288199B700A3A2F8 /* Info.plist */,
+				8436954C2883616600087EB9 /* GoogleService-Info.plist */,
 			);
-			path = FlashChat;
+			path = CloudChat;
 			sourceTree = "<group>";
 		};
 		84EBA4692882CE610018BBBC /* View */ = {
@@ -100,24 +110,44 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		89C22E6A214971E586CE1EF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75B9AC766385872426FD04AB /* Pods-CloudChat.debug.xcconfig */,
+				1DE310EBC537F9E902BE6BA9 /* Pods-CloudChat.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EADC8236D98869F9FC137CC4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E35D38391DCDDE149D8960C /* Pods_CloudChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		841B6F01288199B500A3A2F8 /* FlashChat */ = {
+		841B6F01288199B500A3A2F8 /* CloudChat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 841B6F16288199B700A3A2F8 /* Build configuration list for PBXNativeTarget "FlashChat" */;
+			buildConfigurationList = 841B6F16288199B700A3A2F8 /* Build configuration list for PBXNativeTarget "CloudChat" */;
 			buildPhases = (
+				4317B7436693E762BB688D96 /* [CP] Check Pods Manifest.lock */,
 				841B6EFE288199B500A3A2F8 /* Sources */,
 				841B6EFF288199B500A3A2F8 /* Frameworks */,
 				841B6F00288199B500A3A2F8 /* Resources */,
+				60AB735D08F8599493FDCC94 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = FlashChat;
+			name = CloudChat;
 			productName = FlashChat;
-			productReference = 841B6F02288199B500A3A2F8 /* FlashChat.app */;
+			productReference = 841B6F02288199B500A3A2F8 /* CloudChat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -135,7 +165,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 841B6EFD288199B500A3A2F8 /* Build configuration list for PBXProject "FlashChat" */;
+			buildConfigurationList = 841B6EFD288199B500A3A2F8 /* Build configuration list for PBXProject "CloudChat" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -148,7 +178,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				841B6F01288199B500A3A2F8 /* FlashChat */,
+				841B6F01288199B500A3A2F8 /* CloudChat */,
 			);
 		};
 /* End PBXProject section */
@@ -159,12 +189,55 @@
 			buildActionMask = 2147483647;
 			files = (
 				841B6F12288199B700A3A2F8 /* LaunchScreen.storyboard in Resources */,
+				8436954D2883616600087EB9 /* GoogleService-Info.plist in Resources */,
 				841B6F0F288199B700A3A2F8 /* Assets.xcassets in Resources */,
 				841B6F0D288199B500A3A2F8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4317B7436693E762BB688D96 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CloudChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		60AB735D08F8599493FDCC94 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CloudChat/Pods-CloudChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CloudChat/Pods-CloudChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CloudChat/Pods-CloudChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		841B6EFE288199B500A3A2F8 /* Sources */ = {
@@ -318,17 +391,18 @@
 		};
 		841B6F17288199B700A3A2F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75B9AC766385872426FD04AB /* Pods-CloudChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6GDFQ6F6AG;
-				INFOPLIST_FILE = FlashChat/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CloudChat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lolaevSergey.FlashChat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lolaevSergey.CloudChat;
+				PRODUCT_NAME = CloudChat;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -336,17 +410,18 @@
 		};
 		841B6F18288199B700A3A2F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DE310EBC537F9E902BE6BA9 /* Pods-CloudChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6GDFQ6F6AG;
-				INFOPLIST_FILE = FlashChat/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/CloudChat/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.lolaevSergey.FlashChat;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lolaevSergey.CloudChat;
+				PRODUCT_NAME = CloudChat;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -355,7 +430,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		841B6EFD288199B500A3A2F8 /* Build configuration list for PBXProject "FlashChat" */ = {
+		841B6EFD288199B500A3A2F8 /* Build configuration list for PBXProject "CloudChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				841B6F14288199B700A3A2F8 /* Debug */,
@@ -364,7 +439,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		841B6F16288199B700A3A2F8 /* Build configuration list for PBXNativeTarget "FlashChat" */ = {
+		841B6F16288199B700A3A2F8 /* Build configuration list for PBXNativeTarget "CloudChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				841B6F17288199B700A3A2F8 /* Debug */,
