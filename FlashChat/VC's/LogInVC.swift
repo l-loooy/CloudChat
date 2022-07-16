@@ -1,20 +1,22 @@
 //
-//  ViewController.swift
+//  LogInVC.swift
 //  FlashChat
 //
-//  Created by admin on 15.07.2022.
+//  Created by admin on 16.07.2022.
 //  Copyright © 2022 Sergey Lolaev. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class LogInVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
 
+       
+    }
+    
+
+   
 
 }
-
