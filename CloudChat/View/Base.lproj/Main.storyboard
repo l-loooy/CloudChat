@@ -74,6 +74,9 @@
                                 <rect key="frame" x="166.5" y="424" width="81" height="48"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="30"/>
                                 <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="logInButtonPressed:" destination="ner-qh-s6W" eventType="touchUpInside" id="2dN-xx-mAh"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZJY-2J-919">
                                 <rect key="frame" x="20" y="128" width="374" height="300"/>
@@ -84,7 +87,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="70i-CB-t4o" userLabel="textFieldImage">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="145"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qte-de-EFZ">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="lol@gmail.com" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qte-de-EFZ">
                                                 <rect key="frame" x="48" y="39" width="280" height="34"/>
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -107,10 +110,10 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield" translatesAutoresizingMaskIntoConstraints="NO" id="VwL-Lt-zgz" userLabel="textFieldImage">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="145"/>
                                             </imageView>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1s-ly-LGm">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m1s-ly-LGm">
                                                 <rect key="frame" x="48" y="39" width="280" height="34"/>
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -143,6 +146,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="qS8-0A-HOE"/>
                     <connections>
+                        <outlet property="emailLogIn" destination="qte-de-EFZ" id="G7T-TH-Q8E"/>
+                        <outlet property="passwordLogIn" destination="m1s-ly-LGm" id="2F1-i3-SbD"/>
                         <segue destination="cZK-iH-XqD" kind="show" identifier="fromLogInToChat" id="1nk-mL-GR0"/>
                     </connections>
                 </viewController>
@@ -193,7 +198,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PKO-s1-3BP">
                                                 <rect key="frame" x="48" y="39" width="280" height="34"/>
                                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                         <constraints>
@@ -216,6 +221,9 @@
                                 <rect key="frame" x="109" y="424" width="196" height="48"/>
                                 <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="30"/>
                                 <state key="normal" title="Create account"/>
+                                <connections>
+                                    <action selector="registrationButtonPressed:" destination="i3e-YQ-U6R" eventType="touchUpInside" id="g1R-fh-mcU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" name="BrandPink"/>
@@ -230,6 +238,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="pK7-Ol-oGO"/>
                     <connections>
+                        <outlet property="emailRegistration" destination="BK3-iu-Q1k" id="9BJ-bX-gSS"/>
+                        <outlet property="passwordRegistration" destination="PKO-s1-3BP" id="K4r-Lm-NPU"/>
                         <segue destination="cZK-iH-XqD" kind="show" identifier="fromRegisterToChat" id="SAH-V6-YrW"/>
                     </connections>
                 </viewController>
@@ -268,6 +278,9 @@
                                                 </constraints>
                                                 <color key="tintColor" name="BrandPalette"/>
                                                 <state key="normal" image="paperplane.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="sendMessageButtonPressed:" destination="cZK-iH-XqD" eventType="touchUpInside" id="vQc-WQ-DLD"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -293,8 +306,16 @@
                         <viewLayoutGuide key="safeArea" id="Q49-Hx-8vk"/>
                     </view>
                     <navigationItem key="navigationItem" id="W4b-7l-mZ8">
-                        <barButtonItem key="rightBarButtonItem" title="LogOut" id="WBb-qk-yMt"/>
+                        <barButtonItem key="rightBarButtonItem" title="LogOut" id="WBb-qk-yMt">
+                            <connections>
+                                <action selector="logOutPressed:" destination="cZK-iH-XqD" id="5sm-jM-0Mg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="chatTextField" destination="fdY-5j-jOR" id="snE-Ww-vRJ"/>
+                        <outlet property="tableView" destination="jSK-Zg-nra" id="dAS-Zq-6vy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lxw-Xh-rEy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

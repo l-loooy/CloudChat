@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -97,8 +97,8 @@
 			children = (
 				841B6F09288199B500A3A2F8 /* WelcomeVC.swift */,
 				84EBA4632882CE270018BBBC /* RegistrationVC.swift */,
-				84EBA4672882CE4F0018BBBC /* ChatVC.swift */,
 				84EBA4652882CE420018BBBC /* LogInVC.swift */,
+				84EBA4672882CE4F0018BBBC /* ChatVC.swift */,
 			);
 			path = "VC's";
 			sourceTree = "<group>";
@@ -116,7 +116,6 @@
 				75B9AC766385872426FD04AB /* Pods-CloudChat.debug.xcconfig */,
 				1DE310EBC537F9E902BE6BA9 /* Pods-CloudChat.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

@@ -29,7 +29,6 @@ extension WelcomeVC {
         titleLabel.text = ""
         let titleText = "☁️ CloudChat ☁️"
         var delay = 0
-        
         for letter in titleText {
             Timer.scheduledTimer(withTimeInterval: 0.1 * Double(delay), repeats: false) { (timer) in
                 self.titleLabel.text?.append(letter)
