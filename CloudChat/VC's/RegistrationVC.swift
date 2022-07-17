@@ -27,7 +27,7 @@ class RegistrationVC: UIViewController {
                 if let e = error {
                     self.showAlert(title: "Error", message: e.localizedDescription, style: .alert)
                 } else {
-                    self.performSegue(withIdentifier: "fromRegisterToChat", sender: self)
+                    self.performSegue(withIdentifier: Constants.registerSegue, sender: self)
                 }
             }
         }
