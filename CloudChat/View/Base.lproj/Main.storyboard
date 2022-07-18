@@ -315,7 +315,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="chatTextField" destination="fdY-5j-jOR" id="snE-Ww-vRJ"/>
+                        <outlet property="messageTextFiled" destination="fdY-5j-jOR" id="snE-Ww-vRJ"/>
                         <outlet property="tableView" destination="jSK-Zg-nra" id="dAS-Zq-6vy"/>
                     </connections>
                 </viewController>

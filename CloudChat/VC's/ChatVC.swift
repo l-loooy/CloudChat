@@ -8,12 +8,17 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class ChatVC: UIViewController {
     
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var chatTextField: UITextField!
+    @IBOutlet weak var messageTextFiled: UITextField!
+    
+    //ref to dataBase
+    let db = Firestore.firestore()
+    
     var messages = [
         Messages(sender: "lol@gmail.com", body: "алло"),
         Messages(sender: "chuvak@gmail.com", body: "да..."),
@@ -37,9 +42,23 @@ class ChatVC: UIViewController {
     }
     
     
-    @IBAction func sendMessageButtonPressed(_ sender: UIButton) {
-    }
+    //При отправке сообщения в db будет добавляться пара "отправитель: тело сообщения"
     
+    @IBAction func sendMessageButtonPressed(_ sender: UIButton) {
+        if let messageBody = messageTextFiled.text, let messageSender = Auth.auth().currentUser?.email {
+            db.collection(Constants.FireStore.collectionName).addDocument(data: [
+                Constants.FireStore.senderField : messageSender,
+                Constants.FireStore.bodyField : messageBody
+                ])
+            { (error) in
+                if let err = error {
+                    print("Error adding document: \(err)")
+                } else {
+                    print("Data is successfully saved")
+                }
+            }
+        }
+    }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
         do {
@@ -53,7 +72,7 @@ class ChatVC: UIViewController {
 
 //MARK: - UITableViewDataSource
 extension ChatVC: UITableViewDataSource {
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return messages.count
     }
