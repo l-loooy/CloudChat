@@ -11,15 +11,16 @@ import UIKit
 class MessageCell: UITableViewCell {
     
     @IBOutlet weak var messageText: UILabel!
-    @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var messageView: UIView!
+    @IBOutlet weak var meAvatarImage: UIImageView!
+    @IBOutlet weak var youAvatarImage: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         messageView.layer.cornerRadius = messageView.frame.size.height / 3
-        messageText.textColor = UIColor(named: Constants.BrandColors.brandPalette)
-        
+//        messageText.textColor = UIColor(named: Constants.BrandColors.brandPalette)
+        messageText.textColor = .black
         
     }
 

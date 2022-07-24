@@ -14,8 +14,17 @@ class WelcomeVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         animatedTitle()        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        navigationController?.isNavigationBarHidden = false
     }
 }
 

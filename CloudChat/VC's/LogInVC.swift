@@ -36,7 +36,6 @@ class LogInVC: UIViewController {
 
 //MARK: - LogInVC
 extension LogInVC {
-    
     func showAlert(title: String, message: String, style: UIAlertController.Style) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "ok", style: .default, handler: nil)

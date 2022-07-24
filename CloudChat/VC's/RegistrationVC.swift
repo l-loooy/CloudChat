@@ -17,11 +17,9 @@ class RegistrationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
     }
     
     @IBAction func registrationButtonPressed(_ sender: UIButton) {
-        
         if let email = emailRegistration.text, let password = passwordRegistration.text {
             Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                 if let e = error {
@@ -38,7 +36,6 @@ class RegistrationVC: UIViewController {
 extension RegistrationVC {
     
 // if something goes wrong with registration, show the error to user.
-    
     func showAlert(title: String, message: String, style: UIAlertController.Style) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "ok", style: .default, handler: nil)
