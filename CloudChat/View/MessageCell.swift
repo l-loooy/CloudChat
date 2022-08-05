@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MessageCell: UITableViewCell {
+final class MessageCell: UITableViewCell {
     
     @IBOutlet weak var messageText: UILabel!
     @IBOutlet weak var messageView: UIView!
@@ -17,17 +17,12 @@ class MessageCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         messageView.layer.cornerRadius = messageView.frame.size.height / 3
-//        messageText.textColor = UIColor(named: Constants.BrandColors.brandPalette)
         messageText.textColor = .black
-        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

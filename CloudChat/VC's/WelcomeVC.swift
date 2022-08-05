@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WelcomeVC: UIViewController {
+final class WelcomeVC: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     
@@ -26,13 +26,8 @@ class WelcomeVC: UIViewController {
         super.viewWillDisappear(true)
         navigationController?.isNavigationBarHidden = false
     }
-}
-
-
-//MARK: - WelcomeVC
-extension WelcomeVC {
     
-    func animatedTitle() {
+    private func animatedTitle() {
         titleLabel.text = ""
         let titleText = Constants.chatName
         var delay = 0

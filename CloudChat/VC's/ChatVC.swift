@@ -10,85 +10,89 @@ import UIKit
 import FirebaseAuth
 import FirebaseFirestore
 
-class ChatVC: UIViewController {
+final class ChatVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var messageTextFiled: UITextField!
     @IBOutlet weak var sendMessageButton: UIButton!
     
     //ref to dataBase
-    let db = Firestore.firestore()
+    private let db = Firestore.firestore()
     
-    var messagesArray = [Messages]()
+    private var messagesArray = [Messages]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.allowsSelection = false
+        
         //register nibCell
         tableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellID)
         
         //title for NavBar
         title = Constants.chatName
-        
         navigationItem.hidesBackButton = true
-        
         loadMessage()
-        
     }
     
-    
-    // class QuerySnapshot : NSObject
-    // A QuerySnapshot contains zero or more DocumentSnapshot objects. It can be enumerated using the documents property and its size can be inspected with isEmpty and count.
-    
-    func loadMessage() {
+    private func loadMessage() {
         db.collection(Constants.FireStore.collectionName)
             //sorted messages by date
             .order(by: Constants.FireStore.dateField)
-            .addSnapshotListener() { (querySnapshot, err) in
-                
-                self.messagesArray = []
-                
-                if let err = err {
-                    print("Error getting documents: \(err)")
+            .addSnapshotListener() { [weak self] (querySnapshot, error) in
+                self?.messagesArray = []
+                if let realError = error {
+                    print("Error getting documents: \(realError)")
                 } else {
-                    if let snapshotDocuments = querySnapshot?.documents {
-                        for doc in snapshotDocuments {
-                            let data = doc.data()
-                            if let messageSender = data[Constants.FireStore.senderField] as? String, let messageBody = data[Constants.FireStore.bodyField] as? String {
-                                let newMessage = Messages(sender: messageSender, body: messageBody)
-                                self.messagesArray.append(newMessage)
-                                
-                                //updateUI inside of closure we should switch on mainThread and do it async
-                                DispatchQueue.main.async {
-                                    self.tableView.reloadData()
-                                    
-                                    //autoscroll to bottom of the messagesArray, when new message is created
-                                    let indexPath = IndexPath(row: self.messagesArray.count - 1, section: 0)
-                                    self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
-                                }
-                            }
-                        }
-                    }
+                    self?.snapshotMethod(querySnapshot)
                 }
         }
     }
-    //При отправке сообщения в db будет добавляться пара "отправитель: тело сообщения"
     
+    /*
+     class QuerySnapshot : NSObject
+     A QuerySnapshot contains zero or more DocumentSnapshot objects.
+     It can be enumerated using the documents property and its size can be inspected with isEmpty and count.
+     */
+    private func snapshotMethod(_ querySnapshot: QuerySnapshot?) {
+        if let snapshotDocuments = querySnapshot?.documents {
+            for doc in snapshotDocuments {
+                let data = doc.data()
+                if let messageSender = data[Constants.FireStore.senderField] as? String,
+                    let messageBody = data[Constants.FireStore.bodyField] as? String {
+                    let newMessage = Messages(sender: messageSender, body: messageBody)
+                    self.messagesArray.append(newMessage)
+                    
+                    //updateUI inside of closure we should switch on mainThread and do it async
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                        self.scrollToBottom()
+                    }
+                }
+            }
+        }
+    }
+    
+    private func scrollToBottom() {
+        //autoscroll to bottom of the messagesArray, when new message is created
+        let indexPath = IndexPath(row: self.messagesArray.count - 1, section: 0)
+        self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+    }
+    
+    //When sending, the "sender: message body" pair will be added to the db
     @IBAction func sendMessageButtonPressed(_ sender: UIButton) {
-        //if textFiled is empty there is nothing to send and button is unavaliable
+        //if textFiled is empty, there is nothing to send and button is unavaliable
         if messageTextFiled.text != "" {
             if let messageBody = messageTextFiled.text , let messageSender = Auth.auth().currentUser?.email {
-                
                 db.collection(Constants.FireStore.collectionName).addDocument(data: [
                     Constants.FireStore.senderField : messageSender,
                     Constants.FireStore.bodyField : messageBody,
                     Constants.FireStore.dateField : Date().timeIntervalSince1970
                     ])
                 { (error) in
-                    if let err = error {
-                        print("Error adding document: \(err)")
+                    if let realError = error {
+                        print("Error adding document: \(realError)")
                     } else {
                         print("Data is successfully saved")
                         DispatchQueue.main.async {
@@ -128,7 +132,6 @@ extension ChatVC: UITableViewDataSource {
             
             cell.meAvatarImage.isHidden = false
             cell.youAvatarImage.isHidden = true
-            //выбрать окончательный цвет для фона вокруг сообщения
             cell.messageView.backgroundColor = UIColor(named: Constants.BrandColors.brandPink)
             cell.messageText.textColor = UIColor(named: Constants.BrandColors.messageTextColor)
         } else {
