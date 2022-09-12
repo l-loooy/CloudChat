@@ -6,8 +6,6 @@
 //  Copyright © 2022 Sergey Lolaev. All rights reserved.
 //
 
-
-
 struct Messages {
     let sender: String
     let body: String

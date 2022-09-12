@@ -6,8 +6,6 @@
 //  Copyright © 2022 Sergey Lolaev. All rights reserved.
 //
 
-
-
 struct Constants {
     static let registerSegue = "fromRegisterToChat"
     static let logInSegue = "fromLogInToChat"

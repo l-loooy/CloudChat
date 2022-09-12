@@ -9,7 +9,6 @@
 import UIKit
 import FirebaseAuth
 
-
 final class RegistrationVC: UIViewController {
     
     @IBOutlet weak var emailRegistration: UITextField!
@@ -17,6 +16,7 @@ final class RegistrationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Registration"
     }
     
     @IBAction func registrationButtonPressed(_ sender: UIButton) {

@@ -16,15 +16,16 @@ final class LogInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "LogIn"
     }
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
         if let email = emailLogIn.text, let password = passwordLogIn.text {
-            Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
+            Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
                 if let realError = error {
-                    self.showAlert(title: "Error", message: realError.localizedDescription, style: .alert)
+                    self?.showAlert(title: "Error", message: realError.localizedDescription, style: .alert)
                 } else {
-                    self.performSegue(withIdentifier: Constants.logInSegue, sender: self)
+                    self?.performSegue(withIdentifier: Constants.logInSegue, sender: self)
                 }
             }
         }

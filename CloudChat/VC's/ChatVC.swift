@@ -83,25 +83,42 @@ final class ChatVC: UIViewController {
     //When sending, the "sender: message body" pair will be added to the db
     @IBAction func sendMessageButtonPressed(_ sender: UIButton) {
         //if textFiled is empty, there is nothing to send and button is unavaliable
-        if messageTextFiled.text != "" {
-            if let messageBody = messageTextFiled.text , let messageSender = Auth.auth().currentUser?.email {
-                db.collection(Constants.FireStore.collectionName).addDocument(data: [
-                    Constants.FireStore.senderField : messageSender,
-                    Constants.FireStore.bodyField : messageBody,
-                    Constants.FireStore.dateField : Date().timeIntervalSince1970
-                    ])
-                { (error) in
-                    if let realError = error {
-                        print("Error adding document: \(realError)")
-                    } else {
-                        print("Data is successfully saved")
-                        DispatchQueue.main.async {
-                            self.messageTextFiled.text = ""
-                        }
-                    }
-                }
+        guard let messageBody = messageTextFiled.text , let messageSender = Auth.auth().currentUser?.email else {
+            return
+        }
+        if !messageTextFiled.text!.isEmpty {
+            db.collection(Constants.FireStore.collectionName).addDocument(data: [
+                Constants.FireStore.senderField : messageSender,
+                Constants.FireStore.bodyField : messageBody,
+                Constants.FireStore.dateField : Date().timeIntervalSince1970
+            ]) { [weak self] error in
+                self?.handlerSendMessageCallback(error)
             }
         }
+    }
+    
+    private func handlerSendMessageCallback(_ error: Error?) {
+        guard let error = error else {
+            DispatchQueue.main.async {
+                print("Data is successfully saved")
+                self.clearMessageTextField()
+            }
+            return
+        }
+        alertSendMessage(error)
+    }
+    
+    private func clearMessageTextField() {
+        messageTextFiled.text = ""
+    }
+    
+    private func alertSendMessage(_ error: Error?) {
+        let alert = UIAlertController(title: "Something goes wrong...",
+                                      message: error?.localizedDescription,
+                                      preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .cancel, handler: nil)
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
     }
     
     @IBAction func logOutPressed(_ sender: UIBarButtonItem) {
@@ -129,7 +146,6 @@ extension ChatVC: UITableViewDataSource {
         
         //message from the current user
         if message.sender == Auth.auth().currentUser?.email {
-            
             cell.meAvatarImage.isHidden = false
             cell.youAvatarImage.isHidden = true
             cell.messageView.backgroundColor = UIColor(named: Constants.BrandColors.brandPink)
